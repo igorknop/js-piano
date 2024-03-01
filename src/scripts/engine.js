@@ -1,7 +1,13 @@
 const keys = document.querySelectorAll('.key');
 
+
 const audio = document.createElement('audio');
 const mappedKeys = [];
+
+const slider = document.querySelector('#volume');
+slider.addEventListener('input', () => {
+  audio.volume = slider.value;
+});
 
 keys.forEach(key => {
   key.addEventListener('click', () => {
