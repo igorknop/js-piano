@@ -1,4 +1,5 @@
 const keys = document.querySelectorAll('.key');
+const pianoKeys = document.querySelector('.piano-keys');
 
 
 const audio = document.createElement('audio');
@@ -7,6 +8,11 @@ const mappedKeys = [];
 const slider = document.querySelector('#volume');
 slider.addEventListener('input', () => {
   audio.volume = slider.value;
+});
+
+const toggle = document.querySelector('#toggleKeys');
+toggle.addEventListener('click', () => {
+  pianoKeys.classList.toggle('hidden');
 });
 
 keys.forEach(key => {
